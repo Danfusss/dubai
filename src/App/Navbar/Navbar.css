@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("Gilroy-Regular.eot");
+  src: local("Gilroy Regular"), local("Gilroy-Regular"),
+    url("Gilroy-Regular.eot?#iefix") format("embedded-opentype"),
+    url("Gilroy-Regular.woff2") format("woff2"),
+    url("Gilroy-Regular.woff") format("woff"),
+    url("Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+li {
+  /* font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px; */
+  list-style: none;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #272727;
+}
+.header-container {
+  max-width: 1440px;
+  height: 61px;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_logo {
+  border-radius: 50%;
+  color: white;
+  width: 40px;
+  height: 40px;
+}
+.menu_list > li {
+  position: relative;
+  margin: 0 0 0 20px;
+}
+.menu_link {
+  color: white;
+}
+.menu_sub-list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #272727;
+  padding: 15px;
+  min-width: 200px;
+  color: white;
+}
+.menu_arrow {
+  display: none;
+}
+/*  */
+body._pc .menu_list > li:hover .menu_sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+body._touch .menu_list > li {
+  display: flex;
+  align-items: center;
+}
+body._touch .menu_link {
+  flex: 1 1 auto;
+}
+body._touch .menu_arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 0 0 5px;
+  transition: transform 0.3s ease 0s;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid white;
+}
+/*  */
+@media (min-width: 320px) {
+  .menu_list {
+    display: flex;
+    align-items: center;
+  }
+  .menu_list > li {
+    padding: 0 10px;
+  }
+  .menu_sub-list {
+    transform: translate(0, 10%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+  }
+}
